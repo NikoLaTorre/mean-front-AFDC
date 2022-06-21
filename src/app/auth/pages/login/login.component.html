@@ -1,5 +1,5 @@
 <div class="row">
-    <form class="col s12" [formGroup]="formulario">
+    <form (ngSubmit)="login()" class="col s12" [formGroup]="formulario">
         <div class="row">
             <div class="col s12">
                 <h2>Login</h2>
@@ -21,7 +21,7 @@
             </div>
 
             <div class="input-field col s12">
-                <button class="waves-effect waves-light btn" (click)="login()">LOGIN</button>
+                <button class="waves-effect waves-light btn">LOGIN</button>
             </div>
         </div>
     </form>
