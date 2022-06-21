@@ -1,1 +1,41 @@
-<p>main-task works!</p>
+<nav>
+    <div class="nav-wrapper">
+      <span href="#" class="brand-logo" style= "margin-left: '20px !important'">Tareas</span>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><button class="waves-effect waves-light btn" style= "margin-right: '40px !important'" (click)="logout()" >Logout</button></li>
+      </ul>
+    </div>
+</nav>
+
+<form [formGroup]="formulario" class="container" (ngSubmit)="create()">
+  <div class="row">
+    <div class="input-field col s6">
+      <input formControlName="tarea" form id="create" type="text" class="validate" [(ngModel)]="newTask">
+      <label class="active" for="create">Nueva Tarea</label>
+    </div>
+    <div class="input-field col s6">
+      <button class="waves-effect waves-light btn" [disabled]="formulario.invalid">Agregar</button>
+    </div>
+  </div>
+</form>
+
+<div class="container">
+  <table>
+    <thead>
+      <tr>
+          <th>Nombre</th>
+          <th>Actualizar</th>
+          <th>Eliminar</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let task of tasks">
+        <td>{{task.nombre}}</td>
+        <td><i class="material-icons blue-text iconos" (click)="update(task)">create</i></td>
+        <td><i class="material-icons red-text iconos" (click)="delete(task._id)">delete</i></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

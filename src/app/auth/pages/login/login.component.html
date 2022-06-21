@@ -1,28 +1,30 @@
-<div class="row">
-    <form (ngSubmit)="login()" class="col s12" [formGroup]="formulario">
-        <div class="row">
-            <div class="col s12">
-                <h2>Login</h2>
-                <hr>
+<div class="container">
+    <div class="row">
+        <form (ngSubmit)="login()" class="col s12" [formGroup]="formulario">
+            <div class="row">
+                <div class="col s12">
+                    <h2>Login</h2>
+                    <hr>
+                </div>
+                <div class="input-field col s12">
+                    <input formControlName="email" id="email" type="email" class="validate">
+                    <label for="email">Email</label>
+                    <span class="helper-text" data-error="formato incorrecto" data-success="Correcto">correo@ejemplo.com</span>
+                </div>
+                <div class="input-field col s12">
+                    <input formControlName="password" id="password" type="password" class="validate">
+                    <label for="password">Password</label>
+                    <span class="helper-text" data-error="wrong" data-success="Correcto">Contraseña</span>
+                </div>
+    
+                <div class="input-field col s12">
+                    <a routerLink="/auth/register">New here? Create an account</a>
+                </div>
+    
+                <div class="input-field col s12">
+                    <button class="waves-effect waves-light btn">LOGIN</button>
+                </div>
             </div>
-            <div class="input-field col s12">
-                <input formControlName="email" id="email" type="email" class="validate">
-                <label for="email">Email</label>
-                <span class="helper-text" data-error="formato incorrecto" data-success="Correcto">correo@ejemplo.com</span>
-            </div>
-            <div class="input-field col s12">
-                <input formControlName="password" id="password" type="password" class="validate">
-                <label for="password">Password</label>
-                <span class="helper-text" data-error="wrong" data-success="Correcto">Contraseña</span>
-            </div>
-
-            <div class="input-field col s12">
-                <a routerLink="/auth/register">New here? Create an account</a>
-            </div>
-
-            <div class="input-field col s12">
-                <button class="waves-effect waves-light btn">LOGIN</button>
-            </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>

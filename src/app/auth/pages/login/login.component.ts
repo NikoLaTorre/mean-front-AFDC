@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-login',
@@ -23,10 +25,20 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    this._authService.login(this.formulario.value).subscribe({next: res => console.log(res), complete: () => console.log(this._authService.user)});
-    console.log(this.formulario.value);
-    
-    this.router.navigate(['/task']);
+    this._authService.login(this.formulario.value).subscribe(
+      {next: res => {
+        if (res === true){
+          localStorage.setItem("user", JSON.stringify(this._authService.user));
+          this.router.navigateByUrl("task")
+        }
+        else{
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: res
+          })
+        }
+      }
+      })
   }
-
 }
