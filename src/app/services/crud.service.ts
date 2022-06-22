@@ -40,6 +40,6 @@ export class CrudService {
   update(tarea:string, id:string): Observable<any>{
     const headers = new HttpHeaders()
     .set('x-auth-token', this.user.token);
-    return this.http.post(`${this.baseUrl}/task/update/${id}`, {"nombre": tarea}, {headers});
+    return this.http.put(`${this.baseUrl}/task/update/${id}`, {"nombre": tarea}, {headers});
   }
 }

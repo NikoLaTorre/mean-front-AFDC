@@ -1,11 +1,15 @@
+<div class="container">
+  <h2>Update</h2>
+  <hr>
+</div>
 <form [formGroup]="formulario" class="container" (ngSubmit)="update()">
-    <div class="row">
-      <div class="input-field col s6">
-        <input formControlName="tarea" form id="create" type="text" class="validate" [(ngModel)]="newTask">
-        <label class="active" for="create">Nueva Tarea</label>
-      </div>
-      <div class="input-field col s6">
-        <button class="waves-effect waves-light btn" [disabled]="formulario.invalid">Agregar</button>
-      </div>
+  <div class="row">
+    <div class="input-field col s6">
+      <input formControlName="tarea" form id="create" type="text" class="validate" [(ngModel)]="newTask">
+      <label class="active" for="create">Nueva Tarea</label>
     </div>
-  </form>
+    <div class="input-field col s6">
+      <button class="waves-effect waves-light btn" [disabled]="formulario.invalid">Actualizar</button>
+    </div>
+  </div>
+</form>

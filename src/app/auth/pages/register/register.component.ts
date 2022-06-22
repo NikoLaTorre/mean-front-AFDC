@@ -15,10 +15,10 @@ export class RegisterComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private _authService: AuthService, private router: Router) { 
     this.formulario = fb.group({
-      username: ["tester", [Validators.required, Validators.minLength(6)]],
-      email: ["a@a.com", [Validators.required, Validators.email]],
-      password: ["123456", [Validators.required, Validators.minLength(6)]],
-      password2: ["123456", [Validators.required, Validators.minLength(6)]]
+      username: ["", [Validators.required, Validators.minLength(6)]],
+      email: ["", [Validators.required, Validators.email]],
+      password: ["", [Validators.required, Validators.minLength(6)]],
+      password2: ["", [Validators.required, Validators.minLength(6)]]
     })
   }
 
